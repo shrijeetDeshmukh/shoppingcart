@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button>Back</ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form-class" [formGroup]="register" (ngSubmit)="register_user()" >
+
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+      <ion-icon name="finger-print-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">DOB</ion-label>
+      <ion-datetime (ionChange)="fetchDate($event)" formControlName="dob" [value]="defaultDate"></ion-datetime>
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input maxlength="10" formControlName="phone" type="tel" required></ion-input>
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Pan card number</ion-label>
+      <ion-input maxlength="15" formControlName="pan" type="text" required></ion-input>
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+    </ion-item>
+    <br><br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="tertiary" expand="block">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

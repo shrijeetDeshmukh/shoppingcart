@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>List of Products</ion-title>
+    <!-- <h4>Welcome {{}}</h4> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-list lines="no">
+      <ion-item (click)="product_detail(data)" lines="no" *ngFor="let data of product_list">
+        <ion-thumbnail slot="start">
+          <img class="fit-thumbnail" [src]="data.product_image_url">
+        </ion-thumbnail>
+        <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+          <h2>{{data.product_name}}</h2>
+          <h3> &#8377; {{data.product_price}}</h3>
+          <h5>Free delivery by 8th Dec</h5>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

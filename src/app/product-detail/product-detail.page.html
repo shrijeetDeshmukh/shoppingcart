@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button>Back</ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="go_to_cart()">
+        <ion-icon  slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+      <ion-badge *ngIf="ifProductAdded" class="badge-style" color="light">{{cart_count}}</ion-badge>
+    </ion-buttons>
+    <ion-title>{{product_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-image-style ion-padding">
+    <img class="product-img" [src]="product_image" />
+  </div>
+  <div class="product-description ion-padding">
+ <h3>{{product_name}}</h3>
+ <h3> &#8377; {{product_price}}</h3>
+ <label class="product-description-style">{{product_description}}</label>
+  </div>
+  <div>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="add_to_cart()" type="submit" color="tertiary" expand="block">Add to cart</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
